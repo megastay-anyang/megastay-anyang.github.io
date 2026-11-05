@@ -259,9 +259,40 @@
     .hero-img{height:min(92svh,820px);min-height:560px}
   }
   @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+  /* 겨울 입주 이벤트 (data-evt 요소는 기간이 지나면 스크립트가 지움) */
+  .evt-bar{display:block;background:var(--accent);color:#f7efe3;text-align:center;font-size:14px;font-weight:600;padding:10px 16px;line-height:1.45}
+  .evt-bar b{color:#f3c98b;font-weight:800}
+  .evt-bar u{text-underline-offset:3px;margin-left:6px;opacity:.9}
+  .evt-badge{display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:14px;font-weight:700;color:#1d1a17;background:#f3c98b;padding:7px 14px;border-radius:999px}
+  #event{padding:56px 0 8px}
+  .evt-card{background:var(--accent);color:#f7efe3;border-radius:24px;padding:30px 22px;box-shadow:var(--shadow)}
+  .evt-card .eyebrow{color:#f3c98b}
+  .evt-card h2{color:#fff;margin:8px 0 6px}
+  .evt-big{font-size:clamp(22px,5.4vw,30px);font-weight:800;letter-spacing:-.03em;line-height:1.35;margin:4px 0 6px}
+  .evt-big em{font-style:normal;color:#f3c98b}
+  .evt-when{font-size:15px;opacity:.85}
+  .evt-prices{display:grid;gap:8px;margin:22px 0 4px}
+  .evt-prices div{display:flex;justify-content:space-between;align-items:baseline;gap:10px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:13px 16px;font-size:15px;font-weight:600}
+  .evt-prices s{opacity:.55;font-weight:500;margin-right:8px}
+  .evt-prices b{font-size:21px;font-weight:800;color:#fff}
+  .evt-note{font-size:13px;opacity:.75;margin-top:8px}
+  .evt-rules{margin-top:20px;padding-top:18px;border-top:1px solid rgba(255,255,255,.14);font-size:13.5px;line-height:1.7;opacity:.88;list-style:none}
+  .evt-rules li{position:relative;padding-left:14px}
+  .evt-rules li::before{content:"";position:absolute;left:0;top:.72em;width:5px;height:5px;border-radius:50%;background:#f3c98b}
+  .evt-card .btn{margin-top:22px;width:100%}
+  @media (max-width:759px){.evt-until,.evt-badge{display:none}}
+  .price .evt-price{color:#a4672b;font-weight:700;font-size:12.5px;margin-top:2px}
+  @media (min-width:760px){
+    .evt-card{padding:40px 44px;display:grid;grid-template-columns:1.1fr 1fr;gap:10px 48px;align-items:start}
+    .evt-card .head,.evt-card .evt-rules{grid-column:1}
+    .evt-card .side{grid-column:2;grid-row:1 / span 2}
+    .evt-prices{margin-top:0}
+    .evt-card .btn{width:auto;min-width:260px}
+  }
 </style>
 </head>
 <body>
+<a class="evt-bar" href="#event" data-evt>겨울 입주 이벤트 · <b>3개월간 매달 5만원 할인</b><span class="evt-until"> (12월 31일 입실까지)</span><u>자세히</u></a>
 
 <header id="hdr">
   <div class="wrap bar">
@@ -286,6 +317,7 @@
       <div class="wrap">
         <span class="tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>안양역 1번 출구 450m</span>
         <h1>살고 싶은 방,<br>메가스테이 안양점</h1>
+        <p class="evt-badge" data-evt>겨울 이벤트 · 3개월간 매달 5만원 할인</p>
         <p class="hero-price">월 <b>62만원</b>부터 · 관리비 전부 포함</p>
         <p class="hero-desc">원룸의 편안함, 오피스텔의 시설, 고시원의 부담 없는 조건을 하나로 담은 프리미엄 원룸텔입니다.</p>
         <div class="chips">
@@ -295,6 +327,31 @@
           <a class="btn btn-light" href="#rooms">객실 보기</a>
           <a class="btn btn-kakao" href="https://pf.kakao.com/_xfRclxj/chat" target="_blank" rel="noopener">카톡으로 빈방 문의</a>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="event" data-evt>
+    <div class="wrap">
+      <div class="evt-card reveal">
+        <div class="head">
+          <span class="eyebrow">Winter Event</span>
+          <h2>겨울 입주 이벤트</h2>
+          <p class="evt-big">입실하고 <em>3개월 동안</em><br>매달 입실료 <em>5만원 할인</em></p>
+          <p class="evt-when">11월 ~ 12월 31일 사이 입실하시는 분 · 최대 15만원 혜택</p>
+        </div>
+        <div class="side">
+          <div class="evt-prices"><div><span>스탠다드룸</span><span><s>62만원</s><b>57만원</b></span></div><div><span>디럭스룸</span><span><s>65만원</s><b>60만원</b></span></div><div><span>스위트룸</span><span><s>68만원</s><b>63만원</b></span></div></div>
+          <p class="evt-note">이벤트 기간 3개월의 월 입실료예요. 관리비 포함, 보증금 20만원은 같아요.</p>
+          <a class="btn btn-kakao" href="https://pf.kakao.com/_xfRclxj/chat" target="_blank" rel="noopener">카톡으로 이벤트 문의</a>
+        </div>
+        <ul class="evt-rules">
+          <li>메가스테이에 처음 입실하시는 분만 받을 수 있어요. 2026년 5월~10월에 메가스테이(모든 지점)에 사셨던 분은 제외돼요.</li>
+          <li>지금 입실 중인 분의 방 이동, 퇴실 후 다시 계약하는 경우는 제외돼요.</li>
+          <li>할인은 입실한 달부터 최대 3번, 매달 입실료를 내실 때 빼 드려요.</li>
+          <li>1인 1회, 다른 할인과 함께 받을 수 없어요.</li>
+          <li>남은 방이 다 차면 기간 전에 끝날 수 있어요.</li>
+        </ul>
       </div>
     </div>
   </section>
@@ -462,6 +519,9 @@
 <script>
 // 방마다 사진 장수가 달라 사진 이름 목록으로 관리 (공용 사진은 세 방이 함께 씀)
 const SH = ['shared-desk','shared-bath','shared-sink'];
+// 겨울 이벤트: 2027-01-01(한국시간)부터 이벤트 표시를 모두 숨김
+const EVT = Date.now() < Date.parse('2027-01-01T00:00:00+09:00');
+if (!EVT) document.querySelectorAll('[data-evt]').forEach(el => el.remove());
 const ROOMS = [
   { key:'standard', name:'스탠다드룸', en:'STANDARD', price:62, badge:'가성비',
     desc:'혼자 살기 알맞은 크기에 필요한 가구와 가전을 모두 갖춘 방이에요. 합리적인 가격에 개인 욕실과 외부 창문까지 누릴 수 있어요.',
@@ -503,7 +563,7 @@ ROOMS.forEach((r,ri) => {
     <div class="room-body">
       <div class="room-top">
         <div><div class="en">${r.en}</div><h3>${r.name}</h3></div>
-        <div class="price"><b>${r.price}</b><span>만원 / 월</span><small>보증금 20만원 · 관리비 포함</small></div>
+        <div class="price"><b>${r.price}</b><span>만원 / 월</span><small>보증금 20만원 · 관리비 포함</small>${EVT ? `<small class="evt-price">겨울 이벤트 3개월간 월 ${r.price - 5}만원</small>` : ''}</div>
       </div>
       <p class="desc">${r.desc}</p>
       <ul class="points">${r.points.map(p=>`<li>${p}</li>`).join('')}</ul>
