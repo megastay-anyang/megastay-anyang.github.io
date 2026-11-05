@@ -306,7 +306,7 @@
 </style>
 </head>
 <body>
-<a class="evt-bar" href="#event" data-evt>겨울 입주 혜택 · <b>3개월간 매달 5만원 할인</b><span class="evt-until"> (12월 31일 입실까지)</span><u>자세히</u></a>
+<a class="evt-bar" href="#event" data-evt>겨울 입주 혜택 · <b>2개월간 매달 5만원 할인</b><span class="evt-until"> (12월 31일 입실까지)</span><u>자세히</u></a>
 
 <header id="hdr">
   <div class="wrap bar">
@@ -331,7 +331,7 @@
       <div class="wrap">
         <span class="tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>안양역 1번 출구 450m</span>
         <h1>살고 싶은 방,<br>메가스테이 안양점</h1>
-        <p class="evt-badge" data-evt>겨울 입주 혜택 · 3개월간 매달 5만원 할인</p>
+        <p class="evt-badge" data-evt>겨울 입주 혜택 · 2개월간 매달 5만원 할인</p>
         <p class="hero-price">월 <b>62만원</b>부터 · 관리비 전부 포함</p>
         <p class="hero-desc">원룸의 편안함, 오피스텔의 시설, 고시원의 부담 없는 조건을 하나로 담은 프리미엄 원룸텔입니다.</p>
         <div class="chips">
@@ -353,21 +353,21 @@
           <span class="evt-script">Winter Event</span>
           <h2>겨울 입주 혜택</h2>
           <p class="evt-sub">올겨울 이사, 월세 부담은 가볍게</p>
-          <div class="evt-coupon"><div class="main"><small>입실하고 3개월 동안 매달</small><b>5만원<span>할인</span></b><em>최대 15만원 혜택</em></div><div class="stub"><span>COUPON</span></div></div>
+          <div class="evt-coupon"><div class="main"><small>입실하고 2개월 동안 매달</small><b>5만원<span>할인</span></b><em>최대 10만원 · 첫 입주 웰컴 혜택</em></div><div class="stub"><span>COUPON</span></div></div>
           <p class="evt-when">11월 1일 ~ 12월 31일 입실</p>
         </div>
         <img class="evt-globe" src="images/evt-globe.jpg" alt="" loading="lazy">
         <div class="side">
           <div class="evt-prices"><div><span>스탠다드룸</span><s>62만원</s><b>57만원</b></div><div><span>디럭스룸</span><s>65만원</s><b>60만원</b></div><div><span>스위트룸</span><s>68만원</s><b>63만원</b></div></div>
-          <p class="evt-note">이벤트 기간 월 입실료 · 관리비 포함 · 보증금 20만원</p>
+          <p class="evt-note">이벤트 기간(입실한 달부터 2개월) 월 입실료 · 관리비 포함 · 보증금 20만원</p>
           <a class="btn btn-kakao" href="https://pf.kakao.com/_xfRclxj/chat" target="_blank" rel="noopener">카톡으로 이벤트 문의</a>
         </div>
         <ul class="evt-rules">
-          <li>메가스테이에 처음 입실하시는 분만 받을 수 있어요. 2026년 5월~10월에 메가스테이(모든 지점)에 사셨던 분은 제외돼요.</li>
-          <li>지금 입실 중인 분의 방 이동, 퇴실 후 다시 계약하는 경우는 제외돼요.</li>
-          <li>할인은 입실한 달부터 최대 3번, 매달 입실료를 내실 때 빼 드려요.</li>
+          <li>이번 혜택은 메가스테이와 처음 인연을 맺는 분께 드리는 웰컴 선물이에요.</li>
+          <li>그래서 2026년 5월~10월에 메가스테이(모든 지점)에서 지내셨던 분, 방 이동이나 재계약에는 함께 드리지 못하는 점 너그러이 양해 부탁드려요.</li>
+          <li>할인은 입실한 달부터 2번, 매달 입실료를 내실 때 빼 드려요.</li>
           <li>1인 1회, 다른 할인과 함께 받을 수 없어요.</li>
-          <li>남은 방이 다 차면 기간 전에 끝날 수 있어요.</li>
+          <li>남은 방이 다 차면 일찍 마감될 수 있어요.</li>
         </ul>
       </div>
     </div>
@@ -580,7 +580,7 @@ ROOMS.forEach((r,ri) => {
     <div class="room-body">
       <div class="room-top">
         <div><div class="en">${r.en}</div><h3>${r.name}</h3></div>
-        <div class="price"><b>${r.price}</b><span>만원 / 월</span><small>보증금 20만원 · 관리비 포함</small>${EVT ? `<small class="evt-price">겨울 이벤트 3개월간 월 ${r.price - 5}만원</small>` : ''}</div>
+        <div class="price"><b>${r.price}</b><span>만원 / 월</span><small>보증금 20만원 · 관리비 포함</small>${EVT ? `<small class="evt-price">겨울 이벤트 2개월간 월 ${r.price - 5}만원</small>` : ''}</div>
       </div>
       <p class="desc">${r.desc}</p>
       <ul class="points">${r.points.map(p=>`<li>${p}</li>`).join('')}</ul>
