@@ -259,40 +259,53 @@
     .hero-img{height:min(92svh,820px);min-height:560px}
   }
   @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
-  /* 겨울 입주 이벤트 (data-evt 요소는 기간이 지나면 스크립트가 지움) */
-  .evt-bar{display:block;background:var(--accent);color:#f7efe3;text-align:center;font-size:14px;font-weight:600;padding:10px 16px;line-height:1.45}
-  .evt-bar b{color:#f3c98b;font-weight:800}
+  /* 겨울 입주 이벤트 (data-evt 요소는 기간이 지나면 스크립트가 지움) — 민트·눈·쿠폰 티켓 */
+  :root{--evt:#0f7f72;--evt-d:#0b5e55;--evt-red:#e5484d;--evt-mint:#dff3ef}
+  .evt-bar{display:block;background:var(--evt);color:#fff;text-align:center;font-size:14px;font-weight:600;padding:10px 16px;line-height:1.45}
+  .evt-bar b{color:#fff3b8;font-weight:800}
   .evt-bar u{text-underline-offset:3px;margin-left:6px;opacity:.9}
-  .evt-badge{display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:14px;font-weight:700;color:#1d1a17;background:#f3c98b;padding:7px 14px;border-radius:999px}
+  .evt-badge{display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:14px;font-weight:700;color:var(--evt-d);background:#e6f7f3;padding:7px 14px;border-radius:999px}
   #event{padding:56px 0 8px}
-  .evt-card{background:var(--accent);color:#f7efe3;border-radius:24px;padding:30px 22px;box-shadow:var(--shadow)}
-  .evt-card .eyebrow{color:#f3c98b}
-  .evt-card h2{color:#fff;margin:8px 0 6px}
-  .evt-big{font-size:clamp(22px,5.4vw,30px);font-weight:800;letter-spacing:-.03em;line-height:1.35;margin:4px 0 6px}
-  .evt-big em{font-style:normal;color:#f3c98b}
-  .evt-when{font-size:15px;opacity:.85}
-  .evt-prices{display:grid;gap:8px;margin:22px 0 4px}
-  .evt-prices div{display:flex;justify-content:space-between;align-items:baseline;gap:10px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:13px 16px;font-size:15px;font-weight:600}
-  .evt-prices s{opacity:.55;font-weight:500;margin-right:8px}
-  .evt-prices b{font-size:21px;font-weight:800;color:#fff}
-  .evt-note{font-size:13px;opacity:.75;margin-top:8px}
-  .evt-rules{margin-top:20px;padding-top:18px;border-top:1px solid rgba(255,255,255,.14);font-size:13.5px;line-height:1.7;opacity:.88;list-style:none}
+  .evt-card{position:relative;overflow:hidden;border-radius:26px;padding:34px 20px 28px;text-align:center;color:#3c5a5e;
+    background:url(images/evt-sky.jpg) center top/cover no-repeat,linear-gradient(180deg,#bfe6ee,#e3f5f1);box-shadow:var(--shadow)}
+  .evt-branch{display:inline-block;background:var(--evt);color:#fff;font-size:13px;font-weight:700;padding:6px 14px;border-radius:999px}
+  .evt-script{display:block;font-family:"Brush Script MT","Brush Script Std","Segoe Script",cursive;font-size:clamp(36px,9vw,52px);color:#4fae9f;line-height:1;margin:12px 0 2px}
+  .evt-card h2{color:var(--evt-d);font-size:clamp(36px,10vw,56px);font-weight:900;letter-spacing:-.04em;margin:0 0 6px}
+  .evt-sub{font-size:16px;font-weight:600}
+  .evt-coupon{display:flex;margin:22px auto 0;max-width:460px;text-align:left;filter:drop-shadow(0 8px 18px rgba(20,70,70,.16))}
+  .evt-coupon .main{flex:1;background:#fff;border-radius:18px 0 0 18px;padding:18px 18px 16px 22px;border-right:2px dashed #bfe3dd}
+  .evt-coupon .main small{display:block;font-size:14px;font-weight:600}
+  .evt-coupon .main b{font-size:clamp(40px,11vw,54px);font-weight:900;color:var(--evt-red);letter-spacing:-.03em;line-height:1.15}
+  .evt-coupon .main b span{font-size:.55em;color:var(--evt-d);margin-left:6px}
+  .evt-coupon .main em{display:block;font-style:normal;font-size:13px;font-weight:700;color:#7a8f91}
+  .evt-coupon .stub{width:64px;background:var(--evt);border-radius:0 18px 18px 0;display:flex;align-items:center;justify-content:center}
+  .evt-coupon .stub span{writing-mode:vertical-rl;color:#fff;font-weight:800;letter-spacing:.12em;font-size:15px}
+  .evt-when{display:inline-block;margin-top:16px;background:rgba(255,255,255,.9);border:2px solid #9fd6cd;color:var(--evt-d);font-weight:700;font-size:15px;padding:7px 18px;border-radius:999px}
+  .evt-globe{display:none}
+  .evt-prices{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:24px 0 0}
+  .evt-prices div{background:#fff;border:1px solid #d6ece8;border-radius:16px;padding:14px 4px 12px;box-shadow:0 6px 14px rgba(20,70,70,.07)}
+  .evt-prices span{display:block;font-size:13px;font-weight:700}
+  .evt-prices s{display:block;font-size:12px;color:#9aa9ab;margin-top:4px}
+  .evt-prices b{display:block;font-size:clamp(20px,5.6vw,26px);font-weight:900;color:var(--evt-red);letter-spacing:-.03em}
+  .evt-note{font-size:13px;margin-top:12px}
+  .evt-rules{margin:18px auto 0;max-width:620px;text-align:left;background:rgba(255,255,255,.75);border-radius:16px;padding:16px 18px;font-size:13px;line-height:1.7;list-style:none}
   .evt-rules li{position:relative;padding-left:14px}
-  .evt-rules li::before{content:"";position:absolute;left:0;top:.72em;width:5px;height:5px;border-radius:50%;background:#f3c98b}
-  .evt-card .btn{margin-top:22px;width:100%}
+  .evt-rules li::before{content:"";position:absolute;left:0;top:.72em;width:5px;height:5px;border-radius:50%;background:var(--evt)}
+  .evt-card .btn{margin-top:20px;width:100%;max-width:460px}
   @media (max-width:759px){.evt-until,.evt-badge{display:none}}
-  .price .evt-price{color:#a4672b;font-weight:700;font-size:12.5px;margin-top:2px}
+  .price .evt-price{color:var(--evt-red);font-weight:700;font-size:12.5px;margin-top:2px}
   @media (min-width:760px){
-    .evt-card{padding:40px 44px;display:grid;grid-template-columns:1.1fr 1fr;gap:10px 48px;align-items:start}
-    .evt-card .head,.evt-card .evt-rules{grid-column:1}
-    .evt-card .side{grid-column:2;grid-row:1 / span 2}
-    .evt-prices{margin-top:0}
-    .evt-card .btn{width:auto;min-width:260px}
+    .evt-card{padding:48px 44px 40px;display:grid;grid-template-columns:1.15fr 1fr;gap:0 40px;align-items:center}
+    .evt-card .head{grid-column:1}
+    .evt-globe{display:block;grid-column:2;grid-row:1;width:100%;border-radius:20px;-webkit-mask-image:radial-gradient(ellipse 72% 70% at 50% 52%,#000 62%,transparent 100%);mask-image:radial-gradient(ellipse 72% 70% at 50% 52%,#000 62%,transparent 100%)}
+    .evt-card .side,.evt-card .evt-rules{grid-column:1 / span 2}
+    .evt-prices{max-width:720px;margin:28px auto 0;gap:14px}
+    .evt-prices b{font-size:30px}
   }
 </style>
 </head>
 <body>
-<a class="evt-bar" href="#event" data-evt>겨울 입주 이벤트 · <b>3개월간 매달 5만원 할인</b><span class="evt-until"> (12월 31일 입실까지)</span><u>자세히</u></a>
+<a class="evt-bar" href="#event" data-evt>겨울 입주 혜택 · <b>3개월간 매달 5만원 할인</b><span class="evt-until"> (12월 31일 입실까지)</span><u>자세히</u></a>
 
 <header id="hdr">
   <div class="wrap bar">
@@ -317,7 +330,7 @@
       <div class="wrap">
         <span class="tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>안양역 1번 출구 450m</span>
         <h1>살고 싶은 방,<br>메가스테이 안양점</h1>
-        <p class="evt-badge" data-evt>겨울 이벤트 · 3개월간 매달 5만원 할인</p>
+        <p class="evt-badge" data-evt>겨울 입주 혜택 · 3개월간 매달 5만원 할인</p>
         <p class="hero-price">월 <b>62만원</b>부터 · 관리비 전부 포함</p>
         <p class="hero-desc">원룸의 편안함, 오피스텔의 시설, 고시원의 부담 없는 조건을 하나로 담은 프리미엄 원룸텔입니다.</p>
         <div class="chips">
@@ -335,14 +348,17 @@
     <div class="wrap">
       <div class="evt-card reveal">
         <div class="head">
-          <span class="eyebrow">Winter Event</span>
-          <h2>겨울 입주 이벤트</h2>
-          <p class="evt-big">입실하고 <em>3개월 동안</em><br>매달 입실료 <em>5만원 할인</em></p>
-          <p class="evt-when">11월 ~ 12월 31일 사이 입실하시는 분 · 최대 15만원 혜택</p>
+          <span class="evt-branch">메가스테이 안양점</span>
+          <span class="evt-script">Winter Event</span>
+          <h2>겨울 입주 혜택</h2>
+          <p class="evt-sub">올겨울 이사, 월세 부담은 가볍게</p>
+          <div class="evt-coupon"><div class="main"><small>입실하고 3개월 동안 매달</small><b>5만원<span>할인</span></b><em>최대 15만원 혜택</em></div><div class="stub"><span>COUPON</span></div></div>
+          <p class="evt-when">11월 1일 ~ 12월 31일 입실</p>
         </div>
+        <img class="evt-globe" src="images/evt-globe.jpg" alt="" loading="lazy">
         <div class="side">
-          <div class="evt-prices"><div><span>스탠다드룸</span><span><s>62만원</s><b>57만원</b></span></div><div><span>디럭스룸</span><span><s>65만원</s><b>60만원</b></span></div><div><span>스위트룸</span><span><s>68만원</s><b>63만원</b></span></div></div>
-          <p class="evt-note">이벤트 기간 3개월의 월 입실료예요. 관리비 포함, 보증금 20만원은 같아요.</p>
+          <div class="evt-prices"><div><span>스탠다드룸</span><s>62만원</s><b>57만원</b></div><div><span>디럭스룸</span><s>65만원</s><b>60만원</b></div><div><span>스위트룸</span><s>68만원</s><b>63만원</b></div></div>
+          <p class="evt-note">이벤트 기간 월 입실료 · 관리비 포함 · 보증금 20만원</p>
           <a class="btn btn-kakao" href="https://pf.kakao.com/_xfRclxj/chat" target="_blank" rel="noopener">카톡으로 이벤트 문의</a>
         </div>
         <ul class="evt-rules">
