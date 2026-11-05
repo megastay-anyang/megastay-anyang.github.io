@@ -285,7 +285,7 @@
   .evt-prices{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:24px 0 0}
   .evt-prices div{background:#fff;border:1px solid #d6ece8;border-radius:16px;padding:14px 4px 12px;box-shadow:0 6px 14px rgba(20,70,70,.07)}
   .evt-prices span{display:block;font-size:13px;font-weight:700}
-  .evt-prices s{display:block;font-size:12px;color:#9aa9ab;margin-top:4px}
+  .evt-prices s{display:block;font-size:clamp(15px,4.2vw,18px);font-weight:700;color:#6f7f82;margin-top:4px;text-decoration-thickness:2px}
   .evt-prices b{display:block;font-size:clamp(20px,5.6vw,26px);font-weight:900;color:var(--evt-red);letter-spacing:-.03em}
   .evt-note{font-size:13px;margin-top:12px}
   .evt-rules{margin:18px auto 0;max-width:620px;text-align:left;background:rgba(255,255,255,.75);border-radius:16px;padding:16px 18px;font-size:13px;line-height:1.7;list-style:none}
@@ -301,6 +301,7 @@
     .evt-card .side,.evt-card .evt-rules{grid-column:1 / span 2}
     .evt-prices{max-width:720px;margin:28px auto 0;gap:14px}
     .evt-prices b{font-size:30px}
+    .evt-prices s{font-size:20px}
   }
 </style>
 </head>
